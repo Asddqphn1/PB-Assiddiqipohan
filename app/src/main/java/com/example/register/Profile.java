@@ -45,7 +45,7 @@ public class Profile extends AppCompatActivity {
         username = findViewById(R.id.profileName);
         email = findViewById(R.id.profileEmail);
         password = findViewById(R.id.profilePassword);
-        nim = findViewById(R.id.profileUsername);
+        nim = findViewById(R.id.profileNIM);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Users");
 
@@ -62,7 +62,7 @@ public class Profile extends AppCompatActivity {
                         String passworduser = snapshot.child("userPassword").getValue(String.class);
 
 
-                        username.setText(nama);
+                        username.setText(nama.toUpperCase());
                         email.setText(emailuser);
                         password.setText(passworduser);
                         nim.setText(nimuser);
