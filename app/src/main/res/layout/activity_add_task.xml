@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F7F7"
+    android:padding="16dp"
+    tools:context=".AddTask">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:padding="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:elevation="4dp">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add New Task"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please fill in the task details below"
+            android:textSize="14sp"
+            android:textColor="#777777"
+            android:layout_marginTop="4dp"/>
+
+        <!-- Task Description -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Task Description"
+            android:textSize="14sp"
+
+            android:textColor="#000000"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Enter your task here"
+            android:id="@+id/taskBaru"
+            android:background="@android:drawable/editbox_background"
+            android:padding="12dp"
+            android:textColor="@color/black"
+            android:drawableEnd="@android:drawable/ic_menu_edit"
+            android:layout_marginTop="4dp"/>
+
+        <!-- Date and Time -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:textSize="14sp"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/editTextDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:inputType="none"
+                    android:textColor="@color/black"
+                    android:hint="dd/mm/yyyy"
+                    android:background="@android:drawable/editbox_background"
+                    android:padding="12dp"
+                    android:drawableEnd="@android:drawable/ic_menu_my_calendar"
+                    android:clickable="true"
+                    android:layout_marginTop="4dp"/>
+
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="16dp"
+                android:layout_height="match_parent"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time"
+                    android:textSize="14sp"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/editTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:inputType="time"
+                    android:hint="--:--"
+                    android:textColor="@color/black"
+                    android:background="@android:drawable/editbox_background"
+                    android:padding="12dp"
+                    android:drawableEnd="@android:drawable/ic_menu_recent_history"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Priority Level -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Priority Level"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:layout_marginTop="16dp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp">
+
+            <RadioButton
+                android:id="@+id/red"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" High Priority"
+                android:textColor="#000000"
+                android:drawableLeft="@drawable/red_circle"
+
+                android:padding="8dp"/>
+
+            <RadioButton
+                android:id="@+id/yellow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" Medium Priority"
+                android:textColor="#000000"
+                android:drawableLeft="@drawable/yellow_circle"
+
+                android:padding="8dp"/>
+
+            <RadioButton
+                android:id="@+id/green"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" Low Priority"
+                android:textColor="#000000"
+                android:drawableLeft="@drawable/green_circle"
+
+                android:padding="8dp"/>
+        </RadioGroup>
+
+        <!-- Add Task Button -->
+        <Button
+            android:layout_width="match_parent"
+            android:id="@+id/buttonTambahtugas"
+            android:layout_height="48dp"
+            android:text=" + Add Task"
+            android:backgroundTint="#000000"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="20dp"/>
+    </LinearLayout>
+
+</ScrollView>
