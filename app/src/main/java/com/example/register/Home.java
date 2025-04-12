@@ -40,6 +40,7 @@ public class Home extends AppCompatActivity {
     MyAdapter myAdapter;
     List<Task> myTask;
     RecyclerView recyclerView;
+    TextView pending;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +87,20 @@ public class Home extends AppCompatActivity {
                 System.out.println("Firebase error: " + error.getMessage());
             }
         });
+        databaseReference.child(uid).child("task").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                long jumlahData = snapshot.getChildrenCount();
+                pending = findViewById(R.id.pending);
+                pending.setText(String.valueOf(jumlahData));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
